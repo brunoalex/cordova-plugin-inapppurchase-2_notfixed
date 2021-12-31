@@ -1023,7 +1023,7 @@ public class IabHelper implements PurchasesUpdatedListener {
                             Log.d(TAG, "Error acknowledging purchase. " + billingResult.getDebugMessage());
                             result = new IabResult(billingResult.getResponseCode(), "Error acknowledging purchase.");
                         }
-
+						flagEndAsync();
                         singleListener.onAcknowledgeFinished(purchase, result);
                     }
                 };
